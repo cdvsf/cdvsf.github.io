@@ -551,7 +551,7 @@ section {
   background: linear-gradient(90deg, var(--orange), var(--blue));
   position: relative;
   width: 0%;
-  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 9.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .skill-bar-fill::after {
   content: '';

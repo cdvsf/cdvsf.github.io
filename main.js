@@ -105,50 +105,6 @@ const statsObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 statsObserver.observe(document.querySelector('.hero-stats'));
 
-// PARTICLES
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
-resize();
-window.addEventListener('resize', resize);
-const particles = Array.from({length: 60}, () => ({
-  x: Math.random(), y: Math.random(),
-  vx: (Math.random() - 0.5) * 0.0002,
-  vy: (Math.random() - 0.5) * 0.0002,
-  r: Math.random() * 1.5 + 0.5,
-  o: Math.random() * 0.4 + 0.1
-}));
-function drawParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.x += p.vx; p.y += p.vy;
-    if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
-    if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0;
-    ctx.beginPath();
-    ctx.arc(p.x * canvas.width, p.y * canvas.height, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,92,26,${p.o})`;
-    ctx.fill();
-  });
-  // connect nearby
-  particles.forEach((a, i) => {
-    particles.slice(i + 1).forEach(b => {
-      const dx = (a.x - b.x) * canvas.width;
-      const dy = (a.y - b.y) * canvas.height;
-      const d = Math.sqrt(dx*dx + dy*dy);
-      if (d < 100) {
-        ctx.beginPath();
-        ctx.moveTo(a.x * canvas.width, a.y * canvas.height);
-        ctx.lineTo(b.x * canvas.width, b.y * canvas.height);
-        ctx.strokeStyle = `rgba(255,92,26,${0.08 * (1 - d/100)})`;
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
-    });
-  });
-  requestAnimationFrame(drawParticles);
-}
-drawParticles();
-
 // CONTACT FORM
 document.getElementById('contactForm').addEventListener('submit', e => {
   e.preventDefault();
