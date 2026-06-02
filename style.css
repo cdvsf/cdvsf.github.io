@@ -695,7 +695,7 @@ section {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 4rem;
   max-width: 1200px;
 }
