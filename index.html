@@ -10,6 +10,9 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <header>
+    <img src="Assets/Images/header.png" alt="Website Banner Image" style="width:100%; height:auto;" />
+  </header>
 </head>
 
 <body>
@@ -346,16 +349,16 @@
       <div class="reveal">
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdavnnkd" method="POST">
           <div class="form-field">
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="John Doe" required />
+            <label for="name">Your Name</label>
+            <input type="text" name="name" placeholder="John Doe" required autocomplete="given-name" />
           </div>
           <div class="form-field">
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="john@example.com" required />
+            <label for="email">Email Address</label>
+            <input type="email" name="email" placeholder="john@example.com" required autocomplete="given-email" />
           </div>
           <div class="form-field">
-            <label>Message</label>
-            <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+            <label for="message">Message</label>
+            <textarea name="message" placeholder="Tell me about your project..." required autocomplete="off"></textarea>
           </div>
           <div class="form-success" id="formSuccess">Message sent! I'll get back to you soon.</div>
           <button type="submit" class="btn-primary"
