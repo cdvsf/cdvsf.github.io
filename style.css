@@ -719,16 +719,18 @@ section {
   height: 220px;
   position: relative;
   overflow: hidden;
+  transition: height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-img-bg {
-  position: absolute;
-  inset: 0;
-  transition: transform 0.6s ease;
+  position: relative;
+  width: 100%;
 }
 
-.project-card:hover .project-img-bg {
-  transform: scale(1.05);
+.project-img-bg img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .project-img-overlay {

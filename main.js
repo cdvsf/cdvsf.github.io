@@ -131,3 +131,19 @@ document.getElementById('contactForm').addEventListener('submit', async e => {
     btn.style.background = '#7a1a1a';
   }
 });
+
+// PROJECT IMAGE HOVER — smooth reveal of full image
+document.querySelectorAll('.project-card').forEach(card => {
+  const imgContainer = card.querySelector('.project-img');
+  const img = card.querySelector('.project-img-bg img');
+
+  card.addEventListener('mouseenter', () => {
+    const fullHeight = img.getBoundingClientRect().height ||
+                       (img.naturalHeight / img.naturalWidth) * imgContainer.offsetWidth;
+    imgContainer.style.height = fullHeight + 'px';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    imgContainer.style.height = '220px';
+  });
+});
