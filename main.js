@@ -23,13 +23,6 @@ const heroPhoto = document.getElementById('heroPhoto');
 if (heroPhoto.complete) heroPhoto.classList.add('loaded');
 else heroPhoto.addEventListener('load', () => heroPhoto.classList.add('loaded'));
 
-// PARALLAX HERO
-document.getElementById('hero').addEventListener('mousemove', e => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 10;
-  heroPhoto.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-});
-
 // SCROLL REVEAL
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {

@@ -250,7 +250,7 @@ nav {
 }
 
 .hero-name span {
-  background: linear-gradient(135deg, var(--orange) 0%, var(--blue) 100%);
+  background: linear-gradient(135deg, var(--orange) 100%, var(--blue) 0%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
@@ -436,7 +436,7 @@ section {
 }
 
 .section-title span {
-  background: linear-gradient(135deg, var(--orange), var(--purple));
+  background:var(--orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1122,7 +1122,7 @@ footer {
 .footer-logo {
   font-family: var(--display);
   font-size: 1.4rem;
-  background: linear-gradient(135deg, var(--orange), var(--blue));
+  background: var(--orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
