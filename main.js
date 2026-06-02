@@ -106,14 +106,28 @@ const statsObserver = new IntersectionObserver(entries => {
 statsObserver.observe(document.querySelector('.hero-stats'));
 
 // CONTACT FORM
-document.getElementById('contactForm').addEventListener('submit', e => {
+document.getElementById('contactForm').addEventListener('submit', async e => {
   e.preventDefault();
-  const btn = e.target.querySelector('button');
+  const form = e.target;
+  const btn = form.querySelector('button');
   btn.textContent = 'Sending...';
-  setTimeout(() => {
-    document.getElementById('formSuccess').style.display = 'block';
-    btn.textContent = 'Sent ✓';
-    btn.style.background = '#1a4a2a';
-    e.target.reset();
-  }, 1200);
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('formSuccess').style.display = 'block';
+      btn.textContent = 'Sent ✓';
+      btn.style.background = '#1a4a2a';
+      form.reset();
+    } else {
+      btn.textContent = 'Error!';
+      btn.style.background = '#7a1a1a';
+    }
+  } catch (error) {
+    btn.textContent = 'Error!';
+    btn.style.background = '#7a1a1a';
+  }
 });
