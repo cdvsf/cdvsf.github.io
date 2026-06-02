@@ -33,7 +33,6 @@ body {
   font-family: var(--body);
   overflow-x: hidden;
   overflow-y: scroll;
-  cursor: none;
   scrollbar-width: none;
   -ms-overflow-style: none;
   /* IE and Edge */
@@ -330,7 +329,7 @@ nav {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  cursor: none;
+  ;
   position: relative;
   overflow: hidden;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
@@ -352,7 +351,7 @@ nav {
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid var(--border);
-  cursor: none;
+  ;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   transition: all 0.3s;
 }
@@ -1195,7 +1194,7 @@ footer {
   height: 44px;
   background: var(--orange);
   border: none;
-  cursor: none;
+  ;
   display: flex;
   align-items: center;
   justify-content: center;

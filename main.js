@@ -1,30 +1,3 @@
-// CURSOR
-const cursor = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-});
-(function animRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) *.12;
-  cursorRing.style.left = rx + 'px';
-  cursorRing.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
-})();
-document.querySelectorAll('a, button, .skill-card, .project-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width = '20px'; cursor.style.height = '20px';
-    cursorRing.style.width = '60px'; cursorRing.style.height = '60px';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width = '12px'; cursor.style.height = '12px';
-    cursorRing.style.width = '40px'; cursorRing.style.height = '40px';
-  });
-});
-
 // SCROLL PROGRESS
 const progress = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
